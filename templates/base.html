@@ -3,29 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}My Application{% endblock %}</title>
-    <link rel="stylesheet" href="{{ url_for('static', path='style.css') }}">
-    {% block head_extra %}{% endblock %}
+    <title>{% block title %}Python Web App{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="{{ url_for('static', path='/css/styles.css') }}" rel="stylesheet">
 </head>
-<body>
-    <header>
-        {% block header %}
-        {% include 'partials/header.html' %}
-        {% endblock %}
-    </header>
-
-    <main>
-        {% block content %}
-        <p>Welcome to the application!</p>
-        {% endblock %}
+<body class="flex flex-col min-h-screen">
+    {% include 'components/navbar.html' %}
+    
+    <main class="flex-grow">
+        {% block content %}{% endblock %}
     </main>
-
-    <footer>
-        {% block footer %}
-        {% include 'partials/footer.html' %}
-        {% endblock %}
-    </footer>
-
-    {% block scripts_extra %}{% endblock %}
+    
+    {% include 'components/footer.html' %}
 </body>
 </html>
