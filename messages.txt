@@ -1,2 +1,4 @@
 "simple python based hello world project both frontend and backend in python based tech only"
 
+"please add some frontend componenets to it so that the ui is of good quality in python only files."
+
