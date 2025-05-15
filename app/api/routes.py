@@ -1,9 +1,7 @@
 from fastapi import APIRouter
-from . import router
 
-@router.get('/ping')
-async def ping_pong():
-    """A simple ping endpoint."""
-    return {"message": "pong!"}
+router = APIRouter()
 
-# Add additional API routes here using the @router decorator
+@router.get('/greeting')
+async def get_greeting():
+    return {"message": "Hello from the API!"}
