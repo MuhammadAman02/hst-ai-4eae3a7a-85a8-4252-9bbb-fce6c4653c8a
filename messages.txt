@@ -1,0 +1,2 @@
+"simple python based hello world project both frontend and backend in python based tech only"
+
