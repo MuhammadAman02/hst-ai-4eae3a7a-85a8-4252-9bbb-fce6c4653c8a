@@ -1,22 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello World</title>
-    <link rel="stylesheet" href="{{ url_for('static', path='/styles.css') }}">
-</head>
-<body>
-    <div class="container">
-        <h1>Hello World!</h1>
-        <p id="greeting">Loading greeting...</p>
-    </div>
-    <script>
-        fetch('/api/greeting')
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById('greeting').textContent = data.message;
-            });
-    </script>
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block title %}Welcome to Python Web App{% endblock %}
+
+{% block content %}
+<div class="container mx-auto px-4 py-8">
+    <section class="text-center">
+        <h1 class="text-4xl font-bold mb-4">Welcome to Our Python Web App</h1>
+        <p class="text-xl mb-8">A simple and elegant web application built with FastAPI and Jinja2.</p>
+        <a href="#" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            Get Started
+        </a>
+    </section>
+    
+    <section class="mt-12">
+        <h2 class="text-2xl font-semibold mb-4">Features</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h3 class="text-xl font-semibold mb-2">Fast</h3>
+                <p>Built with FastAPI for high performance.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h3 class="text-xl font-semibold mb-2">Flexible</h3>
+                <p>Easy to extend and customize to your needs.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h3 class="text-xl font-semibold mb-2">Python-Powered</h3>
+                <p>Leverage the power and simplicity of Python.</p>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}
